@@ -6,63 +6,71 @@ st.set_page_config(
 )
 
 GREEN = "#072E00"
-LIGHT_BG = "#F8F9F6"
+BACKGROUND = "#F8F9F6"
 BORDER = "#D9DED6"
+MUTED = "#7A8575"
 
 st.markdown(
     f"""
     <style>
         .stApp {{
-            background-color: {LIGHT_BG};
+            background-color: {BACKGROUND};
+        }}
+
+        .block-container {{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }}
 
         .main-title {{
             color: {GREEN};
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 0px;
+            margin-bottom: 4px;
         }}
 
         .subtitle {{
-            color: {GREEN};
+            color: {MUTED};
             font-size: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }}
 
         .card {{
             background-color: white;
             border: 1px solid {BORDER};
-            border-radius: 14px;
-            padding: 22px;
-            min-height: 160px;
-            box-shadow: 0px 2px 8px rgba(0,0,0,0.04);
-        }}
-
-        .large-card {{
-            min-height: 360px;
-        }}
-
-        .medium-card {{
-            min-height: 260px;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 18px;
         }}
 
         .card-title {{
             color: {GREEN};
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
         }}
 
         .card-text {{
             color: {GREEN};
             font-size: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }}
 
-        .placeholder {{
-            color: #8A9585;
-            font-size: 14px;
-            margin-top: 20px;
+        .empty-space-small {{
+            height: 80px;
+        }}
+
+        .empty-space-medium {{
+            height: 180px;
+        }}
+
+        .empty-space-large {{
+            height: 260px;
+        }}
+
+        div[data-testid="stHorizontalBlock"] {{
+            gap: 1.25rem;
         }}
     </style>
     """,
@@ -70,7 +78,7 @@ st.markdown(
 )
 
 st.markdown(
-    f"""
+    """
     <div class="main-title">Trustee Organizer</div>
     <div class="subtitle">Trust administration dashboard</div>
     """,
@@ -78,7 +86,7 @@ st.markdown(
 )
 
 # Top Row
-col1, col2, col3 = st.columns([1.1, 2.2, 1.1], gap="large")
+col1, col2, col3 = st.columns([1, 2, 1])
 
 with col1:
     st.markdown(
@@ -98,7 +106,7 @@ with col2:
         """
         <div class="card">
             <div class="card-title">Trust Family Tree</div>
-            <div class="placeholder">Relationship map will appear here.</div>
+            <div class="empty-space-small"></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -115,17 +123,15 @@ with col3:
         unsafe_allow_html=True
     )
 
-st.write("")
-
 # Middle Row
-left, right = st.columns([2, 1], gap="large")
+left, right = st.columns([2, 1])
 
 with left:
     st.markdown(
         """
-        <div class="card large-card">
+        <div class="card">
             <div class="card-title">Trusts</div>
-            <div class="placeholder">Trust list will appear here.</div>
+            <div class="empty-space-large"></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -134,25 +140,23 @@ with left:
 with right:
     st.markdown(
         """
-        <div class="card large-card">
+        <div class="card">
             <div class="card-title">Upcoming Deadlines</div>
-            <div class="placeholder">Deadlines will appear here.</div>
+            <div class="empty-space-large"></div>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-st.write("")
-
 # Bottom Row
-bottom_left, bottom_right = st.columns(2, gap="large")
+bottom_left, bottom_right = st.columns(2)
 
 with bottom_left:
     st.markdown(
         """
-        <div class="card medium-card">
+        <div class="card">
             <div class="card-title">Recent Activity</div>
-            <div class="placeholder">Activity log will appear here.</div>
+            <div class="empty-space-medium"></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -161,9 +165,9 @@ with bottom_left:
 with bottom_right:
     st.markdown(
         """
-        <div class="card medium-card">
+        <div class="card">
             <div class="card-title">Quick Actions</div>
-            <div class="placeholder">Action buttons will appear here.</div>
+            <div class="empty-space-medium"></div>
         </div>
         """,
         unsafe_allow_html=True
