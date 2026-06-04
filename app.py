@@ -5,7 +5,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Trustee Organizer")
+st.title("Dashboard")
 
 st.divider()
 
