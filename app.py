@@ -5,22 +5,32 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Dashboard")
+st.title("Trustee Organizer")
 
-# Top Row
+st.divider()
+
+# Top 4 Boxes
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.container(border=True, height=120)
+    with st.container(border=True):
+        st.subheader("Total Trusts")
+        st.write(" ")
 
 with col2:
-    st.container(border=True, height=120)
+    with st.container(border=True):
+        st.subheader("Active Trusts")
+        st.write(" ")
 
 with col3:
-    st.container(border=True, height=120)
+    with st.container(border=True):
+        st.subheader("Closed Trusts")
+        st.write(" ")
 
 with col4:
-    st.container(border=True, height=120)
+    with st.container(border=True):
+        st.subheader("Ending Value")
+        st.write(" ")
 
 st.write("")
 
@@ -28,18 +38,38 @@ st.write("")
 left, right = st.columns([2, 1])
 
 with left:
-    st.container(border=True, height=400)
+    with st.container(border=True):
+        st.subheader("Trust Family Tree")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
 
 with right:
-    st.container(border=True, height=400)
+    with st.container(border=True):
+        st.subheader("Upcoming Deadlines")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
 
 st.write("")
 
 # Bottom Row
-col1, col2 = st.columns(2)
+bottom_left, bottom_right = st.columns(2)
 
-with col1:
-    st.container(border=True, height=300)
+with bottom_left:
+    with st.container(border=True):
+        st.subheader("Recent Activity")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
 
-with col2:
-    st.container(border=True, height=300)
+with bottom_right:
+    with st.container(border=True):
+        st.subheader("Quick Actions")
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
