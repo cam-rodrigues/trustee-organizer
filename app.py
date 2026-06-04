@@ -6,164 +6,165 @@ st.set_page_config(
 )
 
 GREEN = "#072E00"
+LIGHT_BG = "#F8F9F6"
+BORDER = "#D9DED6"
 
 st.markdown(
     f"""
-    <h1 style='color:{GREEN};'>
-        Trustee Organizer
-    </h1>
+    <style>
+        .stApp {{
+            background-color: {LIGHT_BG};
+        }}
+
+        .main-title {{
+            color: {GREEN};
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 0px;
+        }}
+
+        .subtitle {{
+            color: {GREEN};
+            font-size: 15px;
+            margin-bottom: 25px;
+        }}
+
+        .card {{
+            background-color: white;
+            border: 1px solid {BORDER};
+            border-radius: 14px;
+            padding: 22px;
+            min-height: 160px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.04);
+        }}
+
+        .large-card {{
+            min-height: 360px;
+        }}
+
+        .medium-card {{
+            min-height: 260px;
+        }}
+
+        .card-title {{
+            color: {GREEN};
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }}
+
+        .card-text {{
+            color: {GREEN};
+            font-size: 15px;
+            margin-bottom: 10px;
+        }}
+
+        .placeholder {{
+            color: #8A9585;
+            font-size: 14px;
+            margin-top: 20px;
+        }}
+    </style>
     """,
     unsafe_allow_html=True
 )
 
-st.divider()
+st.markdown(
+    f"""
+    <div class="main-title">Trustee Organizer</div>
+    <div class="subtitle">Trust administration dashboard</div>
+    """,
+    unsafe_allow_html=True
+)
 
-# --------------------------
-# TOP ROW
-# --------------------------
+# Top Row
+col1, col2, col3 = st.columns([1.1, 2.2, 1.1], gap="large")
 
-col1, col2, col3 = st.columns([1, 2, 1])
-
-# Overview Box
 with col1:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">Overview</h3>
+    st.markdown(
+        """
+        <div class="card">
+            <div class="card-title">Overview</div>
+            <div class="card-text">Total Trusts</div>
+            <div class="card-text">Active Trusts</div>
+            <div class="card-text">Closed Trusts</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-            <p style="color:{GREEN};">
-                Total Trusts
-            </p>
-
-            <p style="color:{GREEN};">
-                Active Trusts
-            </p>
-
-            <p style="color:{GREEN};">
-                Closed Trusts
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
-
-# Family Tree Box
 with col2:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">
-                Trust Family Tree
-            </h3>
+    st.markdown(
+        """
+        <div class="card">
+            <div class="card-title">Trust Family Tree</div>
+            <div class="placeholder">Relationship map will appear here.</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            """,
-            unsafe_allow_html=True
-        )
-
-# Value Box
 with col3:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">
-                Account Value
-            </h3>
-
-            <p style="color:{GREEN};">
-                Ending Value
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        """
+        <div class="card">
+            <div class="card-title">Account Value</div>
+            <div class="card-text">Ending Value</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.write("")
 
-# --------------------------
-# MIDDLE ROW
-# --------------------------
-
-left, right = st.columns([2, 1])
+# Middle Row
+left, right = st.columns([2, 1], gap="large")
 
 with left:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">
-                Trusts
-            </h3>
-
-            <p style="color:{GREEN};">
-                Select a trust to view its profile.
-            </p>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        """
+        <div class="card large-card">
+            <div class="card-title">Trusts</div>
+            <div class="placeholder">Trust list will appear here.</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 with right:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">
-                Upcoming Deadlines
-            </h3>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        """
+        <div class="card large-card">
+            <div class="card-title">Upcoming Deadlines</div>
+            <div class="placeholder">Deadlines will appear here.</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.write("")
 
-# --------------------------
-# BOTTOM ROW
-# --------------------------
-
-bottom_left, bottom_right = st.columns(2)
+# Bottom Row
+bottom_left, bottom_right = st.columns(2, gap="large")
 
 with bottom_left:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">
-                Recent Activity
-            </h3>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        """
+        <div class="card medium-card">
+            <div class="card-title">Recent Activity</div>
+            <div class="placeholder">Activity log will appear here.</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 with bottom_right:
-    with st.container(border=True):
-        st.markdown(
-            f"""
-            <h3 style="color:{GREEN};">
-                Quick Actions
-            </h3>
-
-            <br>
-            <br>
-            <br>
-            <br>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        """
+        <div class="card medium-card">
+            <div class="card-title">Quick Actions</div>
+            <div class="placeholder">Action buttons will appear here.</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
