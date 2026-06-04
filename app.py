@@ -5,7 +5,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Trustee Organizer")
+st.title("Dashboard")
 
 # Top Row
 col1, col2, col3, col4 = st.columns(4)
