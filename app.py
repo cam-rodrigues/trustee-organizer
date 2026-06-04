@@ -24,7 +24,7 @@ st.markdown(
 
         .main-title {{
             color: {GREEN};
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 700;
             margin-bottom: 4px;
         }}
@@ -32,7 +32,7 @@ st.markdown(
         .subtitle {{
             color: {MUTED};
             font-size: 15px;
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }}
 
         .card {{
@@ -46,37 +46,41 @@ st.markdown(
 
         .card-title {{
             color: {GREEN};
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 14px;
+            margin-bottom: 15px;
         }}
 
         .card-text {{
             color: {GREEN};
             font-size: 15px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }}
 
-        .empty-space-small {{
+        .placeholder {{
+            color: {MUTED};
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 10px;
+        }}
+
+        .space-small {{
             height: 80px;
         }}
 
-        .empty-space-medium {{
+        .space-medium {{
             height: 180px;
         }}
 
-        .empty-space-large {{
-            height: 260px;
-        }}
-
-        div[data-testid="stHorizontalBlock"] {{
-            gap: 1.25rem;
+        .space-large {{
+            height: 300px;
         }}
     </style>
     """,
     unsafe_allow_html=True
 )
 
+# Header
 st.markdown(
     """
     <div class="main-title">Trustee Organizer</div>
@@ -85,7 +89,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Top Row
+# --------------------------------------------------
+# TOP ROW
+# --------------------------------------------------
+
 col1, col2, col3 = st.columns([1, 2, 1])
 
 with col1:
@@ -93,6 +100,7 @@ with col1:
         """
         <div class="card">
             <div class="card-title">Overview</div>
+
             <div class="card-text">Total Trusts</div>
             <div class="card-text">Active Trusts</div>
             <div class="card-text">Closed Trusts</div>
@@ -106,7 +114,12 @@ with col2:
         """
         <div class="card">
             <div class="card-title">Trust Family Tree</div>
-            <div class="empty-space-small"></div>
+
+            <div class="placeholder">
+                Relationship map will appear here.
+            </div>
+
+            <div class="space-small"></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -117,13 +130,17 @@ with col3:
         """
         <div class="card">
             <div class="card-title">Account Value</div>
+
             <div class="card-text">Ending Value</div>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-# Middle Row
+# --------------------------------------------------
+# MIDDLE ROW
+# --------------------------------------------------
+
 left, right = st.columns([2, 1])
 
 with left:
@@ -131,7 +148,12 @@ with left:
         """
         <div class="card">
             <div class="card-title">Trusts</div>
-            <div class="empty-space-large"></div>
+
+            <div class="placeholder">
+                Trust list will appear here.
+            </div>
+
+            <div class="space-large"></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -142,13 +164,21 @@ with right:
         """
         <div class="card">
             <div class="card-title">Upcoming Deadlines</div>
-            <div class="empty-space-large"></div>
+
+            <div class="placeholder">
+                Deadlines will appear here.
+            </div>
+
+            <div class="space-large"></div>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-# Bottom Row
+# --------------------------------------------------
+# BOTTOM ROW
+# --------------------------------------------------
+
 bottom_left, bottom_right = st.columns(2)
 
 with bottom_left:
@@ -156,7 +186,12 @@ with bottom_left:
         """
         <div class="card">
             <div class="card-title">Recent Activity</div>
-            <div class="empty-space-medium"></div>
+
+            <div class="placeholder">
+                Activity log will appear here.
+            </div>
+
+            <div class="space-medium"></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -167,7 +202,12 @@ with bottom_right:
         """
         <div class="card">
             <div class="card-title">Quick Actions</div>
-            <div class="empty-space-medium"></div>
+
+            <div class="placeholder">
+                Action buttons will appear here.
+            </div>
+
+            <div class="space-medium"></div>
         </div>
         """,
         unsafe_allow_html=True
