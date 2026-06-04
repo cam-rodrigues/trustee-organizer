@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Trustee Organizer",
+    page_title="Dashboard",
     layout="wide"
 )
 
